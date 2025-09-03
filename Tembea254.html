@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <style>
     .main-image .carousel-image {
         display: none;
@@ -344,13 +343,10 @@
     <title>TEMBEA254- AI-Powered AR/VR Travel Platform</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<<<<<<< HEAD
     <link rel="stylesheet" href="Tembea254.css">
     <link rel="stylesheet" href="spinner.css">
-=======
    <link rel="stylesheet" href="Tembea254.css">
    <link rel="stylesheet" href="spinner.css">
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
    
 </head>
 <body>
@@ -380,12 +376,10 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#loginorsignup">Login/Signup</a>
-=======
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#login">Login/Signup</a>
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#language">Language</a>
@@ -491,21 +485,21 @@
                             <button class="carousel-nav carousel-next" onclick="nextImage()">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
-<<<<<<< HEAD
+
                             <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=800&q=80" alt="Masai Mara Safari" class="carousel-image active">
                             <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="Mount Kenya" class="carousel-image">
                             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Diani Beach" class="carousel-image">
-=======
+
                             <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Masai Mara Safari" class="carousel-image active">
                             <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mount Kenya" class="carousel-image">
                             <img src="https://images.unsplash.com/photo-1515941086348-4bf77b8c7906?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diani Beach" class="carousel-image">
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
+
                         </div>
                         
                         <!-- Thumbnail images -->
                         <div class="thumbnail-images">
                             <div class="thumbnail active" onclick="showImage(0)">
-<<<<<<< HEAD
+
                                 <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=200&q=80" alt="Safari" class="carousel-image">
                             </div>
                             <div class="thumbnail" onclick="showImage(1)">
@@ -513,7 +507,7 @@
                             </div>
                             <div class="thumbnail" onclick="showImage(2)">
                                 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" alt="Beach" class="carousel-image">
-=======
+
                                 <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Safari" class="carousel-image">
                             </div>
                             <div class="thumbnail" onclick="showImage(1)">
@@ -521,7 +515,7 @@
                             </div>
                             <div class="thumbnail" onclick="showImage(2)">
                                 <img src="https://images.unsplash.com/photo-1515941086348-4bf77b8c7906?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Beach" class="carousel-image">
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
+
                             </div>
                         </div>
                     </div>
@@ -692,8 +686,7 @@
             <div class="login-signup-switch" id="loginSignupSwitch" onclick="toggleLoginSignup()">Don't have an account? Sign Up</div>
         </div>
     </section>
-=======
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
+
 
     <!-- Services Section -->
     <section id="services" class="services-section">
@@ -767,7 +760,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     
     <script>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
         // About section navigation and auto-cycling
         let aboutCurrent = 0;
         let aboutInterval = null;
@@ -858,8 +851,7 @@
             signupForm.classList.add('hide');
             switchText.onclick = toggleLoginSignup;
         });
-=======
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
+
         // Auto-typing text functionality with tourism-focused phrases
         const phrases = [
             "Discover Kenya with AR/VR",
@@ -923,7 +915,6 @@
         const mainImages = document.querySelectorAll('.main-image .carousel-image');
         const thumbnails = document.querySelectorAll('.thumbnail');
         let currentImage = 0;
-<<<<<<< HEAD
         let imageInterval = null;
 
         function showImage(index) {
@@ -932,7 +923,8 @@
             });
             thumbnails.forEach((thumb, i) => {
                 thumb.classList.toggle('active', i === index);
-=======
+            });
+        }
 
         function showImage(index) {
             mainImages.forEach((img, i) => {
@@ -940,7 +932,6 @@
             });
             thumbnails.forEach((thumb, i) => {
             thumb.classList.toggle('active', i === index);
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
             });
             currentImage = index;
         }
@@ -949,16 +940,16 @@
             let index = currentImage - 1;
             if (index < 0) index = mainImages.length - 1;
             showImage(index);
-<<<<<<< HEAD
+
             resetImageInterval();
-=======
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
+
+
         }
 
         function nextImage() {
             let index = (currentImage + 1) % mainImages.length;
             showImage(index);
-<<<<<<< HEAD
+
             resetImageInterval();
         }
 
@@ -973,8 +964,6 @@
         function resetImageInterval() {
             clearInterval(imageInterval);
             startImageInterval();
-=======
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
         }
 
         // Floating video player functionality
@@ -1002,8 +991,8 @@
             loadingDots.textContent = ' (Plan generated!)';
             }, 2000);
         }
-<<<<<<< HEAD
-        // Section navigation logic (robust, runs after DOM is loaded)
+
+        // Section navigation logic 
         document.addEventListener('DOMContentLoaded', function() {
             // Get all nav links and sections
             var navLinks = document.querySelectorAll('.nav-link');
@@ -1087,16 +1076,15 @@
             showAboutSection(0);
             startAboutInterval();
             typeText();
-            // Video switching is now controlled by showSection function
-            showImage(0); // Show the first image initially
-            startImageInterval(); // Start automatic image cycling
-=======
-        // Initialize functions on page load
+            showImage(0); 
+            startImageInterval(); 
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             typeText();
-            setInterval(switchVideo, 15000); // Switch videos every 15 seconds
-            showImage(0); // Show the first image initially
->>>>>>> 74c047027492d00ba25149b2b1a74c0c0d6e4e1a
+            setInterval(switchVideo, 15000); 
+            showImage(0); 
+
             // Hide spinner after content loads
             const spinnerOverlay = document.getElementById('spinner-overlay');
             window.onload = () => {
