@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMBEA254- AI-Powered AR/VR Travel Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="Tembea254.css">
+   <link rel="stylesheet" href="spinner.css">
+   
+</head>
+<body>
+    <div id="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-mountain"></i>TEMBEA254
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">Login/Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#language">Language</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Video Player -->
+    <div id="floatingVideo" class="floating-video">
+        <div class="video-controls">
+            <span>Travel Experience Video</span>
+            <button class="close-video" onclick="closeFloatingVideo()">×</button>
+        </div>
+        <iframe id="floatingVideoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Dual YouTube Video Background -->
+        <iframe id="video1" class="video-background active" 
+                src="https://www.youtube.com/embed/Ks-_Mh1QhMc?autoplay=1&mute=1&loop=1&playlist=Ks-_Mh1QhMc&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                frameborder="0" allow="autoplay; encrypted-media">
+        </iframe>
+        <iframe id="video2" class="video-background" 
+                src="https://www.youtube.com/embed/1La4QzGeaaQ?autoplay=1&mute=1&loop=1&playlist=1La4QzGeaaQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                frameborder="0" allow="autoplay; encrypted-media">
+        </iframe>
+        <div class="video-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content row align-items-center">
+                <!-- Left Content Area -->
+                <div class="col-lg-7 left-content">
+                    <div class="typing-text" id="typingText"></div>
+                    <p class="hero-description">
+                        Experience revolutionary AR/VR tourism with real-time translation, personalized AI itineraries, 
+                        and immersive cultural storytelling. Discover authentic destinations through cutting-edge technology 
+                        and local expertise.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#booking" class="hero-btn btn-booking">
+                            <i class="fas fa-calendar-check"></i> Book Your Trip
+                        </a>
+                        <a href="#" class="hero-btn btn-video" onclick="playFloatingVideo()">
+                            <i class="fas fa-play"></i> Play Video
+                        </a>
+                        <a href="#services" class="hero-btn btn-explore">
+                            <i class="fas fa-vr-cardboard"></i> Explore AR/VR
+                        </a>
+                    </div>
+
+                    <!-- AI Quick Planning Integration -->
+                    <div class="ai-quick-plan">
+                        <h4><i class="fas fa-robot"></i> Quick AI Trip Planning</h4>
+                        <div class="quick-plan-row">
+                            <input type="text" class="quick-plan-input" placeholder="Where do you want to go?" id="destination">
+                            <select class="quick-plan-select" id="mood">
+                                <option value="">Your Current Mood</option>
+                                <option value="adventure">Adventure Seeking</option>
+                                <option value="relaxation">Need Relaxation</option>
+                                <option value="culture">Cultural Exploration</option>
+                                <option value="thrill">Thrill & Excitement</option>
+                                <option value="family">Family Bonding</option>
+                            </select>
+                        </div>
+                        <div class="quick-plan-row">
+                            <select class="quick-plan-select" id="budget">
+                                <option value="">Budget Range (KSH)</option>
+                                <option value="budget">15,000 - 50,000</option>
+                                <option value="mid">50,000 - 150,000</option>
+                                <option value="premium">150,000 - 300,000</option>
+                                <option value="luxury">300,000+</option>
+                            </select>
+                            <input type="date" class="quick-plan-input" id="travelDate">
+                        </div>
+                        <button class="hero-btn btn-explore" onclick="generateAIPlan()" style="margin: 10px 0;">
+                            <i class="fas fa-magic"></i> Generate AI Plan <span id="loadingDots"></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Images Area -->
+                <div class="col-lg-5 right-images">
+                    <div class="images-container">
+                        <!-- Main large image with navigation arrows -->
+                        <div class="main-image">
+                            <button class="carousel-nav carousel-prev" onclick="prevImage()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-nav carousel-next" onclick="nextImage()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Masai Mara Safari" class="carousel-image active">
+                            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mount Kenya" class="carousel-image">
+                            <img src="https://images.unsplash.com/photo-1515941086348-4bf77b8c7906?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diani Beach" class="carousel-image">
+                        </div>
+                        
+                        <!-- Thumbnail images -->
+                        <div class="thumbnail-images">
+                            <div class="thumbnail active" onclick="showImage(0)">
+                                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Safari" class="carousel-image">
+                            </div>
+                            <div class="thumbnail" onclick="showImage(1)">
+                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Mountain" class="carousel-image">
+                            </div>
+                            <div class="thumbnail" onclick="showImage(2)">
+                                <img src="https://images.unsplash.com/photo-1515941086348-4bf77b8c7906?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Beach" class="carousel-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Our Revolutionary Services</h2>
+                    <p class="lead fs-4">Advanced AR/VR technology meets personalized travel experiences</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <i class="fas fa-vr-cardboard service-icon"></i>
+                        <h4>AR/VR Experiences</h4>
+                        <p>Virtual pre-visit experiences with live drone footage and augmented reality overlays for on-site historical information and cultural insights.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <i class="fas fa-language service-icon"></i>
+                        <h4>Real-time Translation</h4>
+                        <p>Direct dialect translation preserving cultural narration authenticity. Complete platform interface in your preferred language.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <i class="fas fa-route service-icon"></i>
+                        <h4>AI Trip Planning</h4>
+                        <p>Mood-based recommendations analyzing your preferences over time. Automated multi-day itineraries with integrated booking system.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <i class="fas fa-shield-alt service-icon"></i>
+                        <h4>Safety Integration</h4>
+                        <p>IoT emergency systems, verified local guides, and AR safety navigation with real-time wildlife-specific protocols.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <i class="fas fa-camera service-icon"></i>
+                        <h4>Live Content</h4>
+                        <p>Premium live video footage with dedicated cameramen. Recent drone imagery updated within 2-3 hours of request.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <i class="fas fa-award service-icon"></i>
+                        <h4>Loyalty Rewards</h4>
+                        <p>Badge system for frequent visitors, seasonal challenges, and reward redemption programs for future trips.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Auto-typing text functionality with tourism-focused phrases
+        const phrases = [
+            "Discover Kenya with AR/VR",
+            "AI-Powered Travel Planning", 
+            "Immersive Cultural Experiences",
+            "Real-time Translation Magic",
+            "Your Adventure Awaits"
+        ];
+        
+        let currentPhrase = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+        
+        function typeText() {
+            const typingElement = document.getElementById('typingText');
+            const current = phrases[currentPhrase];
+            
+            if (isDeleting) {
+                typingElement.innerHTML = current.substring(0, currentChar - 1) + '<span class="cursor">|</span>';
+                currentChar--;
+                
+                if (currentChar === 0) {
+                    isDeleting = false;
+                    currentPhrase = (currentPhrase + 1) % phrases.length;
+                    setTimeout(typeText, 500);
+                } else {
+                    setTimeout(typeText, 50);
+                }
+            } else {
+                typingElement.innerHTML = current.substring(0, currentChar + 1) + '<span class="cursor">|</span>';
+                currentChar++;
+                
+                if (currentChar === current.length) {
+                    setTimeout(() => {
+                        isDeleting = true;
+                        typeText();
+                    }, 3000);
+                } else {
+                    setTimeout(typeText, 100);
+                }
+            }
+        }
+        // Dual video background switching
+        let currentVideo = 1;
+        function switchVideo() {
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
+            
+            if (currentVideo === 1) {
+            video1.classList.remove('active');
+            video2.classList.add('active');
+            currentVideo = 2;
+            } else {
+            video2.classList.remove('active');
+            video1.classList.add('active');
+            currentVideo = 1;
+            }
+        }
+
+        // Image carousel functionality
+        const mainImages = document.querySelectorAll('.main-image .carousel-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        let currentImage = 0;
+
+        function showImage(index) {
+            mainImages.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+            });
+            thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === index);
+            });
+            currentImage = index;
+        }
+
+        function prevImage() {
+            let index = currentImage - 1;
+            if (index < 0) index = mainImages.length - 1;
+            showImage(index);
+        }
+
+        function nextImage() {
+            let index = (currentImage + 1) % mainImages.length;
+            showImage(index);
+        }
+
+        // Floating video player functionality
+        function playFloatingVideo() {
+            const floatingVideo = document.getElementById('floatingVideo');
+            const videoFrame = document.getElementById('floatingVideoFrame');
+            videoFrame.src = "https://www.youtube.com/embed/Ks-_Mh1QhMc?autoplay=1";
+            floatingVideo.classList.add('show');
+        }
+
+        function closeFloatingVideo() {
+            const floatingVideo = document.getElementById('floatingVideo');
+            const videoFrame = document.getElementById('floatingVideoFrame');
+            videoFrame.src = "";
+            floatingVideo.classList.remove('show');
+        }
+
+        // AI Quick Plan loading dots and mock response
+        function generateAIPlan() {
+            const loadingDots = document.getElementById('loadingDots');
+            loadingDots.className = 'loading-dots';
+            loadingDots.textContent = '';
+            setTimeout(() => {
+            loadingDots.className = '';
+            loadingDots.textContent = ' (Plan generated!)';
+            }, 2000);
+        }
+        // Initialize functions on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            typeText();
+            setInterval(switchVideo, 15000); // Switch videos every 15 seconds
+            showImage(0); // Show the first image initially
+            // Hide spinner after content loads
+            const spinnerOverlay = document.getElementById('spinner-overlay');
+            window.onload = () => {
+                spinnerOverlay.style.display = 'none';
+            };
+        });
+    </script>
+</body>
+
+</html>
+sudo apt install git
+git init
+git remote add origin https://github.com/Tembea-254/Tembea-project.git
+git add .
+git commit -m "Tembea254: Enhanced AR/VR Travel Platform with AI Trip Planning and Real-time Translation"
+git branch -M main
+git push -u origin main

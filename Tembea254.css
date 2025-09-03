@@ -1,0 +1,504 @@
+
+        :root {
+            --tourism-primary: #2E8B57;
+            --tourism-secondary: #20B2AA;
+            --tourism-accent: #FF6347;
+            --tourism-gold: #DAA520;
+            --tourism-blue: #4682B4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(46, 139, 87, 0.95) !important;
+            backdrop-filter: blur(15px);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--tourism-gold) !important;
+        }
+
+        /* Hero Section with Dual Video Background */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .video-background.active {
+            opacity: 1;
+        }
+
+        .video-overlay {
+            position: absolute; top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.6) 0%, rgba(32, 178, 170, 0.4) 100%); z-index: -1;
+        }
+
+        /* Content Layout */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            min-height: 85vh;
+        }
+
+        .left-content {
+            padding-right: 40px;
+        }
+
+        .right-images {
+            padding-left: 40px;
+        }
+
+        /* Auto-typing text */
+        .typing-text {
+            font-size: 3.8rem;
+            font-weight: bold;
+            min-height: 5rem;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 4px;
+            background-color: var(--tourism-gold);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Hero Description */
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            line-height: 1.7;
+            color: #f0f8ff;
+        }
+
+        /* AI Quick Planning Section */
+        .ai-quick-plan {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .ai-quick-plan h4 {
+            color: var(--tourism-gold);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .quick-plan-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .quick-plan-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        .quick-plan-select {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        /* Buttons */
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 320px;
+            margin-bottom: 20px;
+        }
+
+        .hero-btn {
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-booking {
+            background: linear-gradient(45deg, var(--tourism-accent), #FF4500);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 99, 71, 0.4);
+        }
+
+        .btn-video {
+            background: linear-gradient(45deg, var(--tourism-blue), #1E90FF);
+            color: white;
+            box-shadow: 0 5px 20px rgba(70, 130, 180, 0.4);
+        }
+
+        .btn-explore {
+            background: linear-gradient(45deg, var(--tourism-gold), #FFD700);
+            color: white;
+            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.4);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        /* Enhanced Image Carousel */
+        .images-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            height: 700px;
+        }
+
+        .main-image {
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            color: var(--tourism-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: var(--tourism-primary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 20px;
+            height: 140px;
+        }
+
+        .thumbnail {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 3px solid transparent;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+            border-color: var(--tourism-gold);
+        }
+
+        .thumbnail.active {
+            border-color: var(--tourism-accent);
+            transform: scale(1.02);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .main-image .carousel-image {
+            opacity: 0;
+        }
+
+        .main-image .carousel-image.active {
+            opacity: 1;
+        }
+
+        /* Floating Video Player */
+        .floating-video {
+            position: fixed;
+            width: 320px;
+            height: 180px;
+            background: #000;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1000;
+            top: 100px;
+            right: 20px;
+            cursor: move;
+            overflow: hidden;
+            border: 2px solid var(--tourism-primary);
+            display: none;
+        }
+
+        .floating-video.show {
+            display: block;
+        }
+
+        .floating-video iframe {
+            width: 100%;
+            height: calc(100% - 30px);
+        }
+
+        .video-controls {
+            height: 30px;
+            background: var(--tourism-primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .close-video {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+            color: white;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--tourism-gold);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(45deg, #FF6347 0%, #FF4500 50%, #DAA520 100%);
+            color: white;
+        }
+
+        .about-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            height: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+            }
+            
+            .left-content, .right-images {
+                padding: 15px 0;
+            }
+            
+            .typing-text {
+                font-size: 2.2rem;
+                min-height: 3rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .images-container {
+                height: 500px;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+            
+            .thumbnail-images {
+                height: 100px;
+            }
+            
+            .hero-buttons {
+                max-width: 100%;
+            }
+
+            .hero-btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+
+            .floating-video {
+                width: 280px;
+                height: 160px;
+                top: 80px;
+                right: 10px;
+            }
+
+            .quick-plan-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .ai-quick-plan {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .typing-text {
+                font-size: 1.8rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .floating-video {
+                width: 250px;
+                height: 140px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-block;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% {
+                color: rgba(0,0,0,0);
+                text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+            }
+            40% {
+                color: white;
+                text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+            }
+            60% {
+                text-shadow: .25em 0 0 white, .5em 0 0 rgba(0,0,0,0);
+            }
+            80%, 100% {
+                text-shadow: .25em 0 0 white, .5em 0 0 white;
+            }
+        }
