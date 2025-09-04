@@ -1,0 +1,12 @@
+/* Main CSS file - imports all modular styles */
+@import url('./css/variables.css');
+@import url('./css/navigation.css');
+@import url('./css/sections.css');
+@import url('./css/hero.css');
+@import url('./css/ai-planning.css');
+@import url('./css/carousel.css');
+@import url('./css/about.css');
+@import url('./css/login-signup.css');
+@import url('./css/services.css');
+@import url('./css/patches.css');
+@import url('./spinner.css');

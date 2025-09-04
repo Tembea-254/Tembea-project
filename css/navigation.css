@@ -1,0 +1,35 @@
+/* Navigation Styles */
+.navbar {
+    background: rgba(46, 139, 87, 0.95) !important;
+    backdrop-filter: blur(15px);
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--white) !important;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--tourism-gold) !important;
+}
+
+/* Navigation hover and active states */
+.nav-link.nav-hover {
+    color: var(--tourism-gold) !important;
+    text-decoration: underline;
+}
+
+.nav-link.nav-active {
+    color: var(--tourism-accent) !important;
+    font-weight: bold;
+}

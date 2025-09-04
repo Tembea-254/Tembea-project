@@ -1,0 +1,33 @@
+/* Section Management Styles */
+section {
+    display: none;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity var(--transition-bounce), transform var(--transition-bounce);
+    width: 100%;
+}
+
+section.active {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    animation: fadeInSection var(--transition-bounce);
+}
+
+#home.active .video-background.active {
+    opacity: 1 !important;
+    z-index: -1 !important;
+}
+
+#home.active {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+@keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner styles are imported from spinner.css */

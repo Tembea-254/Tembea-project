@@ -1,0 +1,60 @@
+/* Services Section Styles */
+.services-section {
+    padding: var(--section-padding) 0;
+    background: linear-gradient(135deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+    color: var(--white);
+}
+
+.section-title {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.service-card {
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 35px !important;
+    margin: 20px 0 !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    transition: all var(--transition-bounce) !important;
+    height: 100% !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+    cursor: pointer !important;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: var(--hover-shadow) !important;
+    z-index: 2 !important;
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--tourism-gold);
+}
+
+/* Additional service card hover effects */
+.service-card {
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 35px !important;
+    margin: 20px 0 !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    transition: all var(--transition-bounce) !important;
+    height: 100% !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+    cursor: pointer !important;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: var(--hover-shadow) !important;
+    z-index: 2 !important;
+}

@@ -1,0 +1,80 @@
+/* AI Quick Planning Section */
+.ai-quick-plan {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin: 25px 0;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: var(--card-shadow);
+}
+
+.ai-quick-plan h4 {
+    color: var(--tourism-gold);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.quick-plan-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.quick-plan-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--button-radius);
+    background: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+}
+
+.quick-plan-select {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--button-radius);
+    background: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+}
+
+/* Loading Animation */
+.loading-dots {
+    display: inline-block;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+    }
+    40% {
+        color: var(--white);
+        text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+    }
+    60% {
+        text-shadow: .25em 0 0 var(--white), .5em 0 0 rgba(0,0,0,0);
+    }
+    80%, 100% {
+        text-shadow: .25em 0 0 var(--white), .5em 0 0 var(--white);
+    }
+}
+
+/* Responsive Design for AI Planning */
+@media (max-width: 576px) {
+    .quick-plan-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ai-quick-plan {
+        padding: 20px;
+    }
+}
