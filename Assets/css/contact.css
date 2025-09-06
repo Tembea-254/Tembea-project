@@ -1,0 +1,236 @@
+/* Contact Section Styles */
+:root {
+    --tourism-primary: #2E8B57;
+    --tourism-secondary: #20B2AA;
+    --tourism-accent: #FF6347;
+    --tourism-gold: #DAA520;
+    --tourism-blue: #4682B4;
+    --tourism-dark: #1a5f3f;
+    --tourism-light: #f0f9f5;
+}
+
+.contact-section {
+    padding: 100px 0;
+    position: relative;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+    min-height: 100vh;
+}
+
+.contact-section .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact-section .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+}
+
+.contact-section .section-header p {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: rotate(0deg);
+}
+
+.contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--tourism-primary);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.form-floating {
+    margin-bottom: 24px;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
+    padding: 18px 20px;
+    font-size: 1.05rem;
+    transition: all 0.4s ease;
+    background: rgba(248, 249, 250, 0.7);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--tourism-primary);
+    box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.15);
+    background: white;
+    transform: translateY(-3px);
+}
+
+.btn-submit {
+    background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 60px;
+    color: white;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(46, 139, 87, 0.1);
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.25);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(46, 139, 87, 0.3);
+}
+
+.contact-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.contact-card h4 {
+    color: var(--tourism-primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.contact-card p {
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    font-size: 18px;
+}
+
+.social-icon.facebook { background: #3b5998; }
+.social-icon.twitter { background: #1da1f2; }
+.social-icon.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.social-icon.linkedin { background: #0077b5; }
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.map-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+.map-container h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--tourism-primary);
+    margin-bottom: 30px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    position: relative;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder i {
+    font-size: 3.5rem;
+    color: var(--tourism-primary);
+    margin-right: 16px;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 35px 25px;
+        transform: rotate(0deg);
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-placeholder {
+        height: 280px;
+    }
+}

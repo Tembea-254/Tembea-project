@@ -27,26 +27,51 @@ class NavigationManager {
     }
 
     showSection(sectionId) {
+        console.log(`Switching to section: ${sectionId}`);
+        
         this.sections.forEach(sec => {
-            if (sec.id === sectionId) {
-                sec.style.display = 'block';
-                sec.style.opacity = '1';
-                sec.style.transform = 'translateY(0)';
-                sec.style.transition = 'opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)';
-                
-                // Handle home section video background
-                if (sectionId === 'home') {
-                    this.activateHomeVideo();
-                } else {
-                    this.deactivateHomeVideo();
-                }
-            } else {
-                sec.style.display = 'none';
-                sec.style.opacity = '0';
-                sec.style.transform = 'translateY(40px)';
-            }
+            sec.classList.remove('active');
+            sec.style.display = 'none';
+            sec.style.opacity = '0';
+            sec.style.transform = 'translateY(40px)';
         });
-        window.scrollTo(0, 0);
+
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+            targetSection.classList.add('active');
+            
+            // Use a small delay to ensure the display change takes effect
+            setTimeout(() => {
+                targetSection.style.opacity = '1';
+                targetSection.style.transform = 'translateY(0)';
+                targetSection.style.transition = 'opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)';
+            }, 10);
+            
+            // Handle home section video background
+            if (sectionId === 'home') {
+                this.activateHomeVideo();
+                // Ensure typing animation is running on home section
+                setTimeout(() => {
+                    if (window.typingAnimation && window.typingAnimation.isInitialized) {
+                        // Animation is already running
+                        console.log('Typing animation already running');
+                    } else if (window.typingAnimation) {
+                        console.log('Starting typing animation for home section');
+                        window.typingAnimation.restart();
+                    }
+                }, 100);
+            } else {
+                this.deactivateHomeVideo();
+            }
+            
+            // Scroll to top for all sections
+            window.scrollTo(0, 0);
+            
+            console.log(`Successfully switched to section: ${sectionId}`);
+        } else {
+            console.error(`Section with ID '${sectionId}' not found`);
+        }
     }
 
     activateHomeVideo() {
