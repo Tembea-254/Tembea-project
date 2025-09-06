@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer - Kenya Tourism</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --tourism-primary: #2E8B57;
+            --tourism-secondary: #20B2AA;
+            --tourism-accent: #FF6347;
+            --tourism-gold: #DAA520;
+            --tourism-blue: #4682B4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Main Footer */
+        .main-footer {
+            background: linear-gradient(135deg, var(--tourism-primary) 0%, var(--tourism-blue) 100%);
+            color: white;
+            padding: 60px 0 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Logo Section */
+        .footer-logo {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .footer-logo h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--tourism-gold), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-logo p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Footer Columns */
+        .footer-column {
+            animation: slideInUp 1s ease-out;
+            position: relative;
+        }
+
+        .footer-column:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .footer-column:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .footer-column:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .footer-column h5 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--tourism-gold);
+        }
+
+        .footer-column h5::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--tourism-gold), var(--tourism-accent));
+            border-radius: 2px;
+        }
+        /* Footer Links */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+            transform: translateX(-10px);
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .footer-links li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .footer-links li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .footer-links li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .footer-links li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .footer-links li:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer-links a:hover {
+            color: var(--tourism-gold);
+            transform: translateX(5px);
+            text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .contact-info li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .contact-info li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .contact-info li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .contact-info li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .contact-info i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            margin-top: 3px;
+            color: var(--tourism-gold);
+            min-width: 20px;
+        }
+
+        .contact-info span {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Newsletter */
+        .newsletter-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: scaleIn 1s ease-out;
+        }
+
+        .newsletter-form h6 {
+            color: var(--tourism-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 25px;
+            padding: 13px 20px;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(218, 165, 32, 0.25);
+            background: white;
+        }
+
+        .btn-newsletter {
+            background: linear-gradient(45deg, var(--tourism-gold), var(--tourism-accent));
+            border: none;
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-newsletter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+            background: linear-gradient(45deg, var(--tourism-accent), var(--tourism-gold));
+        }
+
+        /* Social Media */
+        .social-media {
+            margin-top: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0);
+            animation: popIn 0.6s ease-out forwards;
+        }
+
+        .social-icon:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .social-icon:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .social-icon:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .social-icon:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .social-icon:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .social-icon.facebook {
+            background: linear-gradient(45deg, #3b5998, #8b9dc3);
+        }
+
+        .social-icon.twitter {
+            background: linear-gradient(45deg, #1da1f2, #66c4f7);
+        }
+
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icon.linkedin {
+            background: linear-gradient(45deg, #0077b5, #4da6d9);
+        }
+
+        .social-icon.youtube {
+            background: linear-gradient(45deg, #ff0000, #ff6666);
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Bottom Footer */
+        .bottom-footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .bottom-footer .row {
+            align-items: center;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            justify-content: end;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--tourism-gold);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--tourism-primary), var(--tourism-secondary));
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-logo h3 {
+                font-size: 2rem;
+            }
+
+            .footer-column {
+                margin-bottom: 40px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 15px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
+        /* Hover effects for footer sections */
+        .footer-section:hover {
+            transform: translateY(-3px);
+            transition: transform 0.3s ease;
+        }
+
+        /* Testimonial Carousel in Footer */
+        .testimonial-mini {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--tourism-gold);
+        }
+
+        .testimonial-mini p {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-mini .author {
+            font-size: 0.8rem;
+            color: var(--tourism-gold);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Info -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo footer-section">
+                        <h3><i class="bi bi-geo-alt me-2"></i>Tembea254</h3>
+                        <p>Discover the magic of Kenya through our expertly curated travel experiences. From
+                            breathtaking safaris to pristine beaches, cultural adventures to mountain expeditions - we
+                            make your Kenyan dreams come true.</p>
+
+                        <div class="social-media">
+                            <h6 class="mb-3">Follow Our Journey</h6>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon facebook" title="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="social-icon twitter" title="Twitter">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" title="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon linkedin" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-icon youtube" title="YouTube">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- <div class="testimonial-mini">
+                            <p>"The most incredible safari experience of our lives! Kenya Tourism made everything
+                                perfect."</p>
+                            <div class="author">- Sarah & Mike, UK</div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-column footer-section">
+                        <h5>Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Blogs</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Gallery</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Popular Places</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Social Media Page</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-column footer-section">
+                        <h5>Destinations</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Maasai Mara</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Amboseli</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Mount Kenya</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Diani Beach</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Lake Nakuru</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-column footer-section">
+                        <h5>Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>VR/AR Experiences</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>AI Trip Planning</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Hotel Booking</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Local Marketplace</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Safety IoT Devices</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Live Content & Footage</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i>Multilanguage Translator </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-column footer-section">
+                        <h5>Get In Touch</h5>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Tembea254 <br>Uhuru Highway, Nairobi<br>P.O. Box 30630-00100</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone-fill"></i>
+                                <span>+254706748425</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope-fill"></i>
+                                <span>info@Tembea254.co.ke</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-clock-fill"></i>
+                                <span>Mon-Fri: 8AM-5PM<br>Sat: 9AM-2PM</span>
+                            </li>
+                        </ul>
+
+                        <!-- Newsletter -->
+                        <div class="newsletter-form">
+                            <h6><i class="bi bi-envelope-heart me-2"></i>Stay Updated</h6>
+                            <p>Get the latest travel deals and destination insights.</p>
+                            <form id="newsletterForm">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                                    <button class="btn btn-newsletter" type="submit">
+                                        <i class="bi bi-send"></i>
+                                    </button>
+                                </div>
+                                <small class="text-light opacity-75">
+                                    <i class="bi bi-shield-check me-1"></i>We respect your privacy
+                                </small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="bottom-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="copyright">
+                                © 2025 Tembea254. All rights reserved.
+                                <span class="d-none d-md-inline">| Crafted by Tembea254 in Kenya</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="footer-bottom-links">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                                <li><a href="#">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const btn = this.querySelector('.btn-newsletter');
+            const input = this.querySelector('input[type="email"]');
+            const originalBtnContent = btn.innerHTML;
+
+            // Show loading state
+            btn.innerHTML = '<i class="bi bi-hourglass-split"></i>';
+            btn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerHTML = '<i class="bi bi-check-circle"></i>';
+                btn.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
+                input.value = '';
+
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'alert alert-success alert-dismissible fade show mt-2';
+                successMsg.innerHTML = `
+                    <small><i class="bi bi-check-circle me-1"></i>Thanks for subscribing!</small>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+                `;
+                this.appendChild(successMsg);
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    btn.innerHTML = originalBtnContent;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                }, 3000);
+            }, 2000);
+        });
+
+        // Back to top functionality
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe footer sections
+        document.querySelectorAll('.footer-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add hover effects to social icons
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', function () {
+                this.style.animationPlayState = 'paused';
+            });
+
+            icon.addEventListener('mouseleave', function () {
+                this.style.animationPlayState = 'running';
+            });
+        });
+
+        // Footer links hover effect
+        const footerLinks = document.querySelectorAll('.footer-links a');
+        footerLinks.forEach(link => {
+            link.addEventListener('mouseenter', function () {
+                this.style.paddingLeft = '10px';
+            });
+
+            link.addEventListener('mouseleave', function () {
+                this.style.paddingLeft = '0';
+            });
+        });
+
+        // Add floating animation to footer elements
+        const floatingElements = document.querySelectorAll('.social-icon, .newsletter-form');
+        floatingElements.forEach((element, index) => {
+            element.style.animationDelay = `${index * 0.5}s`;
+            element.style.animation += ', float 6s ease-in-out infinite';
+        });
+
+        // Newsletter input focus effects
+        const newsletterInput = document.querySelector('.newsletter-form input');
+        newsletterInput.addEventListener('focus', function () {
+            this.parentElement.style.transform = 'scale(1.02)';
+            this.parentElement.style.boxShadow = '0 0 20px rgba(218, 165, 32, 0.3)';
+        });
+
+        newsletterInput.addEventListener('blur', function () {
+            this.parentElement.style.transform = 'scale(1)';
+            this.parentElement.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+
+</html>

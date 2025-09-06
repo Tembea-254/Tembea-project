@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kenya Tourism</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --tourism-primary: #2E8B57;
+            --tourism-secondary: #20B2AA;
+            --tourism-accent: #FF6347;
+            --tourism-gold: #DAA520;
+            --tourism-blue: #4682B4;
+            --tourism-dark: #1a5f3f;
+            --tourism-light: #f0f9f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Floating background elements */
+        .bg-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-decoration::before,
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(46, 139, 87, 0.1), rgba(32, 178, 170, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-decoration::before {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: -150px;
+            animation-delay: -2s;
+        }
+
+        .bg-decoration::after {
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            left: -100px;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-20px) rotate(120deg);
+            }
+
+            66% {
+                transform: translateY(10px) rotate(240deg);
+            }
+        }
+
+        .contact-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .section-header p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+            margin: 32px auto;
+            border-radius: 2px;
+            animation: slideIn 1s ease-out 0.5s both;
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
+            animation: slideInLeft 1s ease-out;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form:hover {
+            transform: rotate(0deg);
+            box-shadow: 0 25px 50px rgba(46, 139, 87, 0.25);
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--tourism-primary), var(--tourism-secondary), var(--tourism-accent), var(--tourism-gold));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: translateX(-100%);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: translateX(100%);
+            }
+        }
+
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--tourism-primary);
+            margin-bottom: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .form-floating {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .form-control,
+        .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 16px;
+            padding: 18px 20px;
+            font-size: 1.05rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(248, 249, 250, 0.7);
+            font-weight: 500;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--tourism-primary);
+            box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.15), 0 8px 25px rgba(46, 139, 87, 0.1);
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .form-floating>label {
+            color: #6c757d;
+            font-weight: 500;
+            padding: 0 8px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 60px;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-submit:hover::before {
+            left: 100%;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(45deg, var(--tourism-accent) 0%, var(--tourism-gold) 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+        }
+
+        /* Enhanced Contact Info Grid Layout */
+        .contact-info {
+            animation: slideInRight 1s ease-out;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(46, 139, 87, 0.1);
+            position: relative;
+            overflow: hidden;
+            min-width: 250px;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(46, 139, 87, 0.25);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(45deg, var(--tourism-primary), var(--tourism-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            animation: pulse 3s infinite;
+            box-shadow: 0 8px 20px rgba(46, 139, 87, 0.3);
+        }
+
+        .contact-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .contact-card h4 {
+            color: var(--tourism-primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Social Media Section */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover::before {
+            transform: scale(1);
+        }
+
+        .social-icon.facebook {
+            background: #3b5998;
+        }
+
+        .social-icon.twitter {
+            background: #1da1f2;
+        }
+
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icon.linkedin {
+            background: #0077b5;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Enhanced Map Section */
+        .map-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-out;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .map-container h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--tourism-primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            background: var(--tourism-accent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: mapPulse 2.5s infinite;
+            box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7);
+        }
+
+        @keyframes mapPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7);
+            }
+
+            70% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 0 20px rgba(255, 99, 71, 0);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 99, 71, 0);
+            }
+        }
+
+        .map-placeholder i {
+            font-size: 3.5rem;
+            color: var(--tourism-primary);
+            margin-right: 16px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px) rotate(-10deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(-3deg);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 120px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Loading animation */
+        .btn-submit.loading {
+            pointer-events: none;
+            background: #6c757d;
+        }
+
+        .btn-submit.loading::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            top: 50%;
+            left: 50%;
+            margin-left: -11px;
+            margin-top: -11px;
+            border: 3px solid transparent;
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-card {
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 35px 25px;
+                transform: rotate(0deg);
+            }
+
+            .contact-card {
+                padding: 20px;
+                min-width: auto;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .map-placeholder {
+                height: 280px;
+            }
+
+            .social-icons {
+                gap: 12px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .contact-section {
+                padding: 60px 0;
+            }
+
+            .section-header {
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-decoration"></div>
+
+    <section class="contact-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to explore Kenya? Contact us for personalized travel experiences and unforgettable adventures
+                    that will create memories to last a lifetime.</p>
+            </div>
+
+            <div class="row g-5 align-items-start">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3>
+                            <i class="bi bi-envelope-heart"></i>
+                            Send us a Message
+                        </h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                                            required>
+                                        <label for="firstName">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                            required>
+                                        <label for="lastName">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Email Address"
+                                            required>
+                                        <label for="email">Email Address</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+                                        <label for="phone">Phone Number</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <select class="form-select" id="subject" required>
+                                    <option value="">Choose your interest...</option>
+                                    <option value="safari">Safari Packages</option>
+                                    <option value="accommodation">Accommodation</option>
+                                    <option value="transport">Transportation</option>
+                                    <option value="cultural">Cultural Tours</option>
+                                    <option value="adventure">Adventure Activities</option>
+                                    <option value="other">Other Inquiries</option>
+                                </select>
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" id="message" style="height: 140px"
+                                    placeholder="Your Message" required></textarea>
+                                <label for="message">Tell us about your dream Kenya experience...</label>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-submit">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <!-- Office Location -->
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h4>Visit Our Office</h4>
+                            <p><strong>Tembea254</strong></p>
+                            <p>Uhuru Highway, Nairobi</p>
+                            <p>P.O. Box 30630-00100</p>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <h4>Call Us</h4>
+                            <p><strong>Main Office:</strong> +254706748425</p>
+                            <p><strong>Tourist Helpline:</strong> +254754200568</p>
+                            <p><strong>Emergency:</strong> +25406748425</p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h4>Email Us</h4>
+                            <p><strong>General:</strong> info@Tembea254.co.ke</p>
+                            <p><strong>Bookings:</strong> bookings@Tembea254.co.ke</p>
+                            <p><strong>Support:</strong> support@Tembea254.co.ke</p>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-share"></i>
+                            </div>
+                            <h4>Follow Us</h4>
+                            <p>Stay connected for updates and travel inspiration</p>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon facebook" title="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="social-icon twitter" title="Twitter">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" title="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon linkedin" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="map-container">
+                        <h4><i class="bi bi-map me-3"></i>Find Us on the Map</h4>
+                        <div class="map-placeholder">
+                            <div class="text-center">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <div><strong>Tembea254</strong><br>Nairobi, Kenya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Enhanced form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+
+            // Add loading state
+            submitBtn.classList.add('loading');
+            submitBtn.innerHTML = 'Sending...';
+
+            // Simulate form submission
+            setTimeout(() => {
+                // Reset button
+                submitBtn.classList.remove('loading');
+                submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Message Sent Successfully!';
+                submitBtn.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
+
+                // Reset form
+                this.reset();
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                }, 3000);
+            }, 2500);
+        });
+
+        // Enhanced form field animations
+        const formControls = document.querySelectorAll('.form-control, .form-select');
+        formControls.forEach(control => {
+            control.addEventListener('focus', function () {
+                this.parentElement.style.transform = 'translateY(-3px)';
+                this.parentElement.style.transition = 'transform 0.3s ease';
+            });
+
+            control.addEventListener('blur', function () {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+
+            // Add typing effect
+            control.addEventListener('input', function () {
+                if (this.value.length > 0) {
+                    this.style.borderColor = 'var(--tourism-secondary)';
+                } else {
+                    this.style.borderColor = '#e9ecef';
+                }
+            });
+        });
+
+        // Enhanced scroll animations with stagger effect
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe contact cards for staggered animation
+        const contactCards = document.querySelectorAll('.contact-card');
+        contactCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px)';
+            card.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15}s`;
+            observer.observe(card);
+        });
+
+        // Parallax effect for background decorations
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.bg-decoration');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Add smooth reveal animation for form
+        const form = document.querySelector('.contact-form');
+        const formObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0) rotate(-3deg)';
+                }
+            });
+        });
+
+        form.style.opacity = '0';
+        form.style.transform = 'translateX(-60px) rotate(-10deg)';
+        formObserver.observe(form);
+
+        // Add hover effects to social icons
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', function () {
+                this.style.animationPlayState = 'paused';
+            });
+
+            icon.addEventListener('mouseleave', function () {
+                this.style.animationPlayState = 'running';
+            });
+        });
+
+        // Add click ripple effect to buttons
+        document.querySelectorAll('.btn-submit').forEach(button => {
+            button.addEventListener('click', function (e) {
+                const rect = this.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+    <style>
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+
+</html>

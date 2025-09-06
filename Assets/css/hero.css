@@ -87,7 +87,6 @@
     line-height: 1.7;
     color: var(--light-text);
 }
-
 /* Buttons */
 .hero-buttons {
     display: flex;
@@ -98,43 +97,58 @@
 }
 
 .hero-btn {
+    position: relative;
     padding: 18px 35px;
     border: none;
     border-radius: 50px;
     font-weight: bold;
     text-transform: uppercase;
-    transition: all var(--transition-smooth);
+    transition: all 0.4s ease;
     text-decoration: none;
     display: block;
     text-align: center;
-    font-size: var(--font-size-base);
+    font-size: 1.1rem;
     letter-spacing: 0.5px;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+    overflow: hidden;
 }
 
-.btn-booking {
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+    transition: background 0.3s;
+}
+
+.btn-booking:hover {
     background: linear-gradient(45deg, var(--tourism-accent), #FF4500);
-    color: var(--white);
-    box-shadow: var(--button-shadow);
+    box-shadow: 0 5px 20px rgba(255, 99, 71, 0.4);
 }
 
-.btn-video {
+.btn-video:hover {
     background: linear-gradient(45deg, var(--tourism-blue), #1E90FF);
-    color: var(--white);
     box-shadow: 0 5px 20px rgba(70, 130, 180, 0.4);
 }
 
-.btn-explore {
+.btn-explore:hover {
     background: linear-gradient(45deg, var(--tourism-gold), #FFD700);
-    color: var(--white);
     box-shadow: 0 5px 20px rgba(218, 165, 32, 0.4);
 }
 
 .hero-btn:hover {
     transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
-    color: var(--white);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
+.hero-btn:hover::before {
+    background: rgba(255, 255, 255, 0.18);
+}
 /* Floating Video Player */
 .floating-video {
     position: fixed;

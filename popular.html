@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Destinations - Kenya Tourism</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --tourism-primary: #2E8B57;
+            --tourism-secondary: #20B2AA;
+            --tourism-accent: #FF6347;
+            --tourism-gold: #DAA520;
+            --tourism-blue: #4682B4;
+            --tourism-dark: #1a5f3f;
+            --tourism-light: #f0f9f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .popular-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--tourism-primary);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .popular-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .popular-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            height: 300px;
+            transform: rotate(-5deg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            flex-shrink: 0;
+        }
+
+        .popular-card:hover {
+            transform: rotate(-5deg) translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .popular-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .popular-content {
+            padding: 15px;
+            text-align: center;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .popular-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--tourism-primary);
+            margin-bottom: 8px;
+        }
+
+        .popular-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+
+        .popular-link {
+            color: var(--tourism-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .popular-link:hover {
+            color: var(--tourism-accent);
+        }
+
+        .explore-btn,
+        .show-less-btn {
+            display: block;
+            margin: 30px auto 0;
+            background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(46, 139, 87, 0.2);
+        }
+
+        .show-less-btn {
+            background: linear-gradient(45deg, var(--tourism-accent) 0%, var(--tourism-gold) 100%);
+            display: none;
+        }
+
+        .explore-btn:hover,
+        .show-less-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 139, 87, 0.3);
+        }
+
+        .more-cards.hidden {
+            display: none !important;
+        }
+
+        /* animation classes */
+        .fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInRotate {
+            from {
+                opacity: 0;
+                transform: rotate(-5deg) translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: rotate(-5deg) translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .popular-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .popular-card {
+                width: 180px;
+                height: 280px;
+                margin-bottom: 20px;
+            }
+
+            .popular-image {
+                height: 130px;
+            }
+
+            .popular-content {
+                height: 150px;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="popular-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Explore Kenya's most beloved spots, from wildlife havens to pristine beaches.</p>
+            </div>
+
+            <!-- First row of cards -->
+            <div class="popular-container">
+                <div class="popular-card">
+                    <img src="https://via.placeholder.com/220x150?text=Maasai+Mara" alt="Maasai Mara"
+                        class="popular-image">
+                    <div class="popular-content">
+                        <h3 class="popular-title">Maasai Mara</h3>
+                        <p class="popular-description">Famous for wildlife.</p>
+                        <a href="#" class="popular-link">Learn More</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="https://via.placeholder.com/220x150?text=Nairobi+Park" alt="Nairobi National Park"
+                        class="popular-image">
+                    <div class="popular-content">
+                        <h3 class="popular-title">Nairobi Park</h3>
+                        <p class="popular-description">Urban safari spot.</p>
+                        <a href="#" class="popular-link">Learn More</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="https://via.placeholder.com/220x150?text=Diani+Beach" alt="Diani Beach"
+                        class="popular-image">
+                    <div class="popular-content">
+                        <h3 class="popular-title">Diani Beach</h3>
+                        <p class="popular-description">Coastal beauty.</p>
+                        <a href="#" class="popular-link">Learn More</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="https://via.placeholder.com/220x150?text=Mount+Kenya" alt="Mount Kenya"
+                        class="popular-image">
+                    <div class="popular-content">
+                        <h3 class="popular-title">Mount Kenya</h3>
+                        <p class="popular-description">Hiking destination.</p>
+                        <a href="#" class="popular-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden extra cards -->
+            <div class="more-cards hidden fade">
+                <div class="popular-container">
+                    <div class="popular-card">
+                        <img src="https://via.placeholder.com/220x150?text=Amboseli" alt="Amboseli"
+                            class="popular-image">
+                        <div class="popular-content">
+                            <h3 class="popular-title">Amboseli</h3>
+                            <p class="popular-description">Elephant haven.</p>
+                            <a href="#" class="popular-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="popular-card">
+                        <img src="https://via.placeholder.com/220x150?text=Lamu+Island" alt="Lamu Island"
+                            class="popular-image">
+                        <div class="popular-content">
+                            <h3 class="popular-title">Lamu Island</h3>
+                            <p class="popular-description">Historic charm.</p>
+                            <a href="#" class="popular-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="popular-card">
+                        <img src="https://via.placeholder.com/220x150?text=Nakuru+Lake" alt="Lake Nakuru"
+                            class="popular-image">
+                        <div class="popular-content">
+                            <h3 class="popular-title">Lake Nakuru</h3>
+                            <p class="popular-description">Flamingo paradise.</p>
+                            <a href="#" class="popular-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="popular-card">
+                        <img src="https://via.placeholder.com/220x150?text=Tsavo+East" alt="Tsavo East"
+                            class="popular-image">
+                        <div class="popular-content">
+                            <h3 class="popular-title">Tsavo East</h3>
+                            <p class="popular-description">Wildlife reserve.</p>
+                            <a href="#" class="popular-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <button class="explore-btn">Explore More</button>
+            <button class="show-less-btn">Show Less</button>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.popular-card');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInRotate 0.6s ease forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
+
+            const exploreBtn = document.querySelector('.explore-btn');
+            const showLessBtn = document.querySelector('.show-less-btn');
+            const moreCards = document.querySelector('.more-cards');
+
+            if (exploreBtn && showLessBtn && moreCards) {
+                exploreBtn.addEventListener('click', () => {
+                    moreCards.classList.remove('hidden');
+                    void moreCards.offsetWidth; // reflow for animation
+                    moreCards.classList.add('show');
+                    exploreBtn.style.display = 'none';
+                    showLessBtn.style.display = 'block';
+                });
+
+                showLessBtn.addEventListener('click', () => {
+                    moreCards.classList.remove('show');
+                    setTimeout(() => {
+                        moreCards.classList.add('hidden');
+                    }, 500); // wait for transition
+                    showLessBtn.style.display = 'none';
+                    exploreBtn.style.display = 'block';
+                    window.scrollTo({ top: document.querySelector('.popular-section').offsetTop, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

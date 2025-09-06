@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+
+<!-- Section 4 - Gallery -->
+<section class="section-4">
+    <h2>Explore Our Gallery</h2>
+
+    <div class="gallery-tabs">
+        <button class="gallery-tab active" data-category="all">All</button>
+        <button class="gallery-tab" data-category="coast">Coast</button>
+        <button class="gallery-tab" data-category="amboseli">Amboseli</button>
+        <button class="gallery-tab" data-category="mara">Maasai Mara</button>
+        <button class="gallery-tab" data-category="mountain">Mountain</button>
+        <button class="gallery-tab" data-category="lakes">Lakes</button>
+        <button class="gallery-tab" data-category="culture">Culture</button>
+        <button class="gallery-tab" data-category="safari">Safari</button>
+    </div>
+
+    <div class="gallery-content">
+        <div class="gallery-grid active" data-category="all">
+            <div class="gallery-item">Great Migration</div>
+            <div class="gallery-item">Diani Beach Sunset</div>
+            <div class="gallery-item">Mount Kenya Peak</div>
+            <div class="gallery-item">Lake Nakuru Flamingos</div>
+            <div class="gallery-item">Maasai Warriors</div>
+            <div class="gallery-item">Elephants & Kilimanjaro</div>
+            <div class="gallery-item">Safari Lodge</div>
+            <div class="gallery-item">Watamu Marine Park</div>
+        </div>
+
+        <div class="gallery-grid" data-category="coast">
+            <div class="gallery-item">Diani Beach Sunset</div>
+            <div class="gallery-item">Watamu Marine Park</div>
+            <div class="gallery-item">Malindi Coral Reef</div>
+            <div class="gallery-item">Lamu Island Dhows</div>
+            <div class="gallery-item">Kilifi Creek</div>
+            <div class="gallery-item">Mombasa Old Town</div>
+            <div class="gallery-item">Turtle Bay Resort</div>
+            <div class="gallery-item">Indian Ocean View</div>
+        </div>
+
+        <div class="gallery-grid" data-category="amboseli">
+            <div class="gallery-item">Elephants & Kilimanjaro</div>
+            <div class="gallery-item">Amboseli Sunrise</div>
+            <div class="gallery-item">Maasai Village</div>
+            <div class="gallery-item">Acacia Trees</div>
+            <div class="gallery-item">Wildlife Migration</div>
+            <div class="gallery-item">Observation Hill</div>
+            <div class="gallery-item">Dust Devils</div>
+            <div class="gallery-item">Big Five Safari</div>
+        </div>
+
+        <div class="gallery-grid" data-category="mara">
+            <div class="gallery-item">Great Migration</div>
+            <div class="gallery-item">Lion Pride</div>
+            <div class="gallery-item">Mara River Crossing</div>
+            <div class="gallery-item">Hot Air Balloon</div>
+            <div class="gallery-item">Cheetah Hunt</div>
+            <div class="gallery-item">Savannah Plains</div>
+            <div class="gallery-item">Leopard Spotting</div>
+            <div class="gallery-item">Sunset Game Drive</div>
+        </div>
+
+        <div class="gallery-grid" data-category="mountain">
+            <div class="gallery-item">Mount Kenya Peak</div>
+            <div class="gallery-item">Alpine Vegetation</div>
+            <div class="gallery-item">Mountain Climbing</div>
+            <div class="gallery-item">Glacial Lakes</div>
+            <div class="gallery-item">Rock Formations</div>
+            <div class="gallery-item">Mountain Lodge</div>
+            <div class="gallery-item">Hiking Trails</div>
+            <div class="gallery-item">Snow Peaks</div>
+        </div>
+
+        <div class="gallery-grid" data-category="lakes">
+            <div class="gallery-item">Lake Nakuru Flamingos</div>
+            <div class="gallery-item">Lake Naivasha Hippos</div>
+            <div class="gallery-item">Lake Victoria Fishing</div>
+            <div class="gallery-item">Lake Turkana Jade Sea</div>
+            <div class="gallery-item">Lake Elementaita Pelicans</div>
+            <div class="gallery-item">Lake Baringo Birds</div>
+            <div class="gallery-item">Crater Lake</div>
+            <div class="gallery-item">Rift Valley Views</div>
+        </div>
+
+        <div class="gallery-grid" data-category="culture">
+            <div class="gallery-item">Maasai Warriors</div>
+            <div class="gallery-item">Traditional Dance</div>
+            <div class="gallery-item">Beadwork Art</div>
+            <div class="gallery-item">Cultural Festival</div>
+            <div class="gallery-item">Local Markets</div>
+            <div class="gallery-item">Tribal Ceremonies</div>
+            <div class="gallery-item">Craft Making</div>
+            <div class="gallery-item">Village Life</div>
+        </div>
+
+        <div class="gallery-grid" data-category="safari">
+            <div class="gallery-item">Game Drive Vehicle</div>
+            <div class="gallery-item">Safari Lodge</div>
+            <div class="gallery-item">Bush Breakfast</div>
+            <div class="gallery-item">Night Safari</div>
+            <div class="gallery-item">Safari Guide</div>
+            <div class="gallery-item">Tented Camp</div>
+            <div class="gallery-item">Wildlife Photography</div>
+            <div class="gallery-item">Campfire Stories</div>
+        </div>
+    </div>
+
+    <!-- Enhanced Google Ratings with Bootstrap -->
+    <div class="google-ratings">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-16 col-md-16">
+                    <div class="rating-container text-center">
+                        <!-- Google Logo -->
+                        <div class="mb-3">
+                            <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#EA4335"
+                                    d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" />
+                                <path fill="#FBBC05"
+                                    d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" />
+                                <path fill="#EA4335"
+                                    d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" />
+                                <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z" />
+                                <path fill="#EA4335"
+                                    d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" />
+                                <path fill="#FBBC05"
+                                    d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" />
+                            </svg>
+                        </div>
+
+                        <h3 class="h4 text-primary fw-bold mb-3">GOOGLE RATINGS</h3>
+
+                        <div class="rating-score">4.8</div>
+
+                        <div class="stars mb-3">
+                            <span class="star" style="--i: 0">★</span>
+                            <span class="star" style="--i: 1">★</span>
+                            <span class="star" style="--i: 2">★</span>
+                            <span class="star" style="--i: 3">★</span>
+                            <span class="star" style="--i: 4">★</span>
+                        </div>
+
+                        <p class="rating-text">"Kenya's tourism experiences exceed all expectations - truly
+                            magical destinations!"</p>
+
+                        <div class="review-count">
+                            <i class="bi bi-people-fill me-2"></i>Based on 2,847+ reviews
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                    <small class="text-muted">Verified Location</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-shield-check text-success me-2"></i>
+                                    <small class="text-muted">Trusted Reviews</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-star-fill" style="color: var(--tourism-gold)"></i>
+                                    <small class="text-muted ms-2">Top Rated</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Section 4 - Gallery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- bootsrap mini js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="explore.js"></script>
+</body>
+</html>
