@@ -1,4 +1,3 @@
-// Main JavaScript file - coordinates all components
 class TembeaApp {
     constructor() {
         this.components = {};
@@ -6,7 +5,6 @@ class TembeaApp {
     }
 
     init() {
-        // Wait for DOM to be fully loaded
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.initializeComponents());
         } else {
@@ -15,7 +13,6 @@ class TembeaApp {
     }
 
     initializeComponents() {
-        // Initialize all components
         this.components.navigation = new NavigationManager();
         this.components.videoManager = new VideoManager();
         this.components.floatingVideoPlayer = new FloatingVideoPlayer();
@@ -25,7 +22,6 @@ class TembeaApp {
         this.components.loginSignupManager = new LoginSignupManager();
         this.components.aiPlanner = new AIPlanner();
 
-        // Store global references for backward compatibility
         window.navigationManager = this.components.navigation;
         window.videoManager = this.components.videoManager;
         window.floatingVideoPlayer = this.components.floatingVideoPlayer;
@@ -35,10 +31,7 @@ class TembeaApp {
         window.loginSignupManager = this.components.loginSignupManager;
         window.aiPlanner = this.components.aiPlanner;
 
-        // Initialize typing animation
         this.components.typingAnimation.init();
-
-        // Handle spinner
         this.handleSpinner();
 
         console.log('Tembea254 app initialized successfully!');
@@ -50,11 +43,11 @@ class TembeaApp {
             window.addEventListener('load', () => {
                 setTimeout(() => {
                     spinnerOverlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
                 }, 1500);
             });
         }
     }
 }
 
-// Initialize the app
 window.tembeaApp = new TembeaApp();

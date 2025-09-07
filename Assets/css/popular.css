@@ -1,0 +1,197 @@
+:root {
+     --tourism-primary: #2E8B57;
+     --tourism-secondary: #20B2AA;
+     --tourism-accent: #FF6347;
+     --tourism-gold: #DAA520;
+     --tourism-blue: #4682B4;
+     --tourism-dark: #1a5f3f;
+     --tourism-light: #f0f9f5;
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+     min-height: 100vh;
+     color: #333;
+     overflow-x: hidden;
+ }
+
+ .popular-section {
+     padding: 100px 0;
+     position: relative;
+ }
+
+ .section-header {
+     text-align: center;
+     margin-bottom: 60px;
+ }
+
+ .section-header h2 {
+     font-family: 'Playfair Display', serif;
+     font-size: 3.5rem;
+     font-weight: 700;
+     color: var(--tourism-primary);
+     margin-bottom: 15px;
+ }
+
+ .section-header p {
+     font-size: 1.2rem;
+     color: #666;
+     max-width: 600px;
+     margin: 0 auto;
+     line-height: 1.6;
+ }
+
+ .popular-container {
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: center;
+     gap: 20px;
+     overflow-x: auto;
+     padding: 10px 0;
+ }
+
+ .popular-card {
+     background: #fff;
+     border-radius: 15px;
+     overflow: hidden;
+     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+     width: 220px;
+     height: 300px;
+     transform: rotate(-5deg);
+     transition: transform 0.4s ease, box-shadow 0.4s ease;
+     opacity: 0;
+     flex-shrink: 0;
+ }
+
+ .popular-card:hover {
+     transform: rotate(-5deg) translateY(-10px);
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+ }
+
+ .popular-image {
+     width: 100%;
+     height: 150px;
+     object-fit: cover;
+ }
+
+ .popular-content {
+     padding: 15px;
+     text-align: center;
+     height: 150px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .popular-title {
+     font-family: 'Playfair Display', serif;
+     font-size: 1.4rem;
+     color: var(--tourism-primary);
+     margin-bottom: 8px;
+ }
+
+ .popular-description {
+     font-size: 0.95rem;
+     color: #666;
+     margin-bottom: 10px;
+     flex-grow: 1;
+ }
+
+ .popular-link {
+     color: var(--tourism-secondary);
+     text-decoration: none;
+     font-weight: 500;
+     font-size: 0.9rem;
+ }
+
+ .popular-link:hover {
+     color: var(--tourism-accent);
+ }
+
+ .explore-btn,
+ .show-less-btn {
+     display: block;
+     margin: 30px auto 0;
+     background: linear-gradient(45deg, var(--tourism-primary) 0%, var(--tourism-secondary) 100%);
+     color: white;
+     border: none;
+     padding: 10px 25px;
+     font-size: 1rem;
+     font-weight: 600;
+     border-radius: 25px;
+     transition: all 0.3s ease;
+     box-shadow: 0 4px 10px rgba(46, 139, 87, 0.2);
+ }
+
+ .show-less-btn {
+     background: linear-gradient(45deg, var(--tourism-accent) 0%, var(--tourism-gold) 100%);
+     display: none;
+ }
+
+ .explore-btn:hover,
+ .show-less-btn:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 6px 15px rgba(46, 139, 87, 0.3);
+ }
+
+ .more-cards.hidden {
+     display: none !important;
+ }
+
+ /* animation classes */
+ .fade {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: all 0.5s ease;
+ }
+
+ .fade.show {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ @keyframes fadeInRotate {
+     from {
+         opacity: 0;
+         transform: rotate(-5deg) translateY(50px);
+     }
+
+     to {
+         opacity: 1;
+         transform: rotate(-5deg) translateY(0);
+     }
+ }
+
+ @media (max-width: 768px) {
+     .popular-container {
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+
+     .popular-card {
+         width: 180px;
+         height: 280px;
+         margin-bottom: 20px;
+     }
+
+     .popular-image {
+         height: 130px;
+     }
+
+     .popular-content {
+         height: 150px;
+     }
+
+     .section-header h2 {
+         font-size: 2.5rem;
+     }
+ }
+
+/* Hero Section */

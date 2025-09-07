@@ -7,46 +7,44 @@ class NavigationManager {
     }
 
     init() {
-        // Attach click event to nav links
+        // Attach click event to nav links for smooth scrolling
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default hash behavior
                 const href = link.getAttribute('href');
                 if (href && href.startsWith('#')) {
                     const sectionId = href.substring(1);
-                    this.showSection(sectionId);
-                    e.preventDefault();
+                    this.scrollToSection(sectionId);
                 }
             });
         });
 
         // Add hover and active effects
         this.setupMouseEvents();
-        
-        // Show home section by default
-        this.showSection('home');
+
+        // Ensure home video is active if starting on home
+        if (window.location.hash === '#home' || !window.location.hash) {
+            this.activateHomeVideo();
+        }
     }
 
-    showSection(sectionId) {
-        this.sections.forEach(sec => {
-            if (sec.id === sectionId) {
-                sec.style.display = 'block';
-                sec.style.opacity = '1';
-                sec.style.transform = 'translateY(0)';
-                sec.style.transition = 'opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)';
-                
-                // Handle home section video background
-                if (sectionId === 'home') {
-                    this.activateHomeVideo();
-                } else {
-                    this.deactivateHomeVideo();
-                }
+    scrollToSection(sectionId) {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Handle home section video background
+            if (sectionId === 'home') {
+                this.activateHomeVideo();
             } else {
-                sec.style.display = 'none';
-                sec.style.opacity = '0';
-                sec.style.transform = 'translateY(40px)';
+                this.deactivateHomeVideo();
             }
-        });
-        window.scrollTo(0, 0);
+
+            // Update active nav link
+            this.navLinks.forEach(link => {
+                link.classList.toggle('nav-active', link.getAttribute('href') === `#${sectionId}`);
+            });
+        }
     }
 
     activateHomeVideo() {
